@@ -32,10 +32,19 @@ They are included for the reproducibility of experimental results.
 
 To run the Python program, first navigate to this project's root folder.
 
-Next, run the following command,
+Next, run the following command to start the program.
 
 ```bash
 python3 Source\ Code/comparison_plotter.py
 ```
 
-Upon completion of each process, MatPlotLib will generate and display a graph for each process's run time.
+Alternatively, from the `Source Code` folder, the following command will start the program.
+
+'''bash
+python3 comparison_plotter.py
+'''
+
+### Results
+
+Upon completion of all processes, MatPlotLib will generate and display a graph for each process's run time.
+Within the MatPlotLib window, the graph can be zoomed in and moved for further analysis.
