@@ -20,7 +20,7 @@ def time_it(function, parameter):
 
     Parameters
     ----------
-        function: Function to execute.
+        function: Function to execute. Should be a process-blocking function.
         parameter: Parameters to pass into `function`.
 
     Returns
@@ -47,6 +47,7 @@ def plot_it(n_data, np_t_data, py_t_data=None, nb_t_data=None, title=""):
                 Where `NAME` takes on either `nb`, `np`, or `py` to represent 
                 Numba's function, NumPy's function, or a pure Python function, respectively. 
     """
+
     plt.plot(n_data, np_t_data, 'r', label="NumPy")
     if py_t_data is not None:
         plt.plot(n_data, py_t_data, 'b', label="Python")
@@ -71,7 +72,6 @@ def python_find_avg(samples):
     total_sum = 0  # Initialize sum to 0.
     for x in samples:  # Loop over all samples.
         total_sum += x  # Add sample to sum counter.
-
     count = len(samples)  # Get number of elements in `samples`.
     average = total_sum / count
     return average
@@ -101,13 +101,6 @@ def numpy_rms(samples):
 
 def python_rms(samples):
     """ Python implementation of the Root Mean Squared function."""
-    # square = [x **
-    #           2 for x in samples]  # Compute square using Python list comprehension.
-    # # Compute average of squares using built-in functions.
-    # mean_square = sum(square) / len(square)
-    # # Raise to one-half power is equivalent to square root.
-    # rms = mean_square ** 0.5
-    # return rms
     square_sum = 0  # Initialize counter for sum of squares.
     for x in samples:  # Loop over every sample in list.
         square_sum += (x ** 2)  # Add squared sample to counter.
@@ -134,8 +127,11 @@ def numba_rms(samples):
     return rms
 
 
+# Generate samples for final analysis. Longer load time.
 samples = numpy.arange(1, 10, 1e-6)  # Generates ~ 9M samples in range [1, 10].
-# samples = numpy.arange(1000)  # Generates 1000 sequential integer samples, starting at 0.
+
+# Generate samples for testing program. Short load time.
+# samples = numpy.arange(1000)  # Generates sequential integer samples [0, 1000].
 
 sample_list = []
 n = 20
