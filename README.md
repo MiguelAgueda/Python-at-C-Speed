@@ -40,9 +40,9 @@ python3 Source\ Code/comparison_plotter.py
 
 Alternatively, from the `Source Code` folder, the following command will start the program.
 
-'''bash
+```bash
 python3 comparison_plotter.py
-'''
+```
 
 ### Results
 
