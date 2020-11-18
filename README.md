@@ -12,7 +12,7 @@ Optimizing Python run time performance can be achieved with the following method
 - [NumPy](https://numpy.org/doc/stable/)
 
 Currently, comparisons between pure Python, Numba, and NumPy have been implemented in
-[Source Code/comparison_plotter.py](<Source\ Code/comparison_plotter.py>)
+[Source Code/comparison_plotter.py](<Source Code/comparison_plotter.py>)
 
 ## Running the Demonstration
 
